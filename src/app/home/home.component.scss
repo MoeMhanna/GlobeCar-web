@@ -61,10 +61,15 @@ $text-input-color:#b1b0ae;
             color: $primary-color;
           }
         }
-
       }
       li :hover{
         @include hover;
+      }
+      .logo{
+        color: #fff;
+        opacity:0.6;
+        font-size:15px;
+        padding-left:10px;
       }
     }
 
