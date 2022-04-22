@@ -1,75 +1,129 @@
-$primary-color:#FF770D ;
-$secondary-color: #312e29;
-$nav-item-color:#b1a9a9;
-$text-input-color:#b1b0ae;
+@import 'src/app/sass/abstracts/variables.scss';
+@import 'src/app/sass/abstracts/_mixins.scss';
 
-@mixin hover{
-    color:$primary-color;
-    transition: 0.3s;
-}
-.bar-container{
-  height:40px ;
+.top-nav-bar{
+  background-color: $accent-color;
   display: flex;
-  align-items: center ;
-  position: relative;
-  background-color: $secondary-color;
-  margin: 0 12px;
-  padding: 15px 120px;
-  .search-bar-container{
-    display: flex;
-    vertical-align: center;
-    .search-input{
-      background-color: $secondary-color;
-      border:none;
-      outline:none;
-      padding-right:15px;
-      width:70%;
-      color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2% 9%;
+  margin: 0 12.8px;
 
-    }::placeholder{
-       color:#fff;
-       opacity:0.7;
-     }
-    mat-icon{
-      vertical-align:text-bottom;
-      color: $primary-color;
-      font-weight:bolder;
-      font-size: 30px;
-
-    }
+  @include padding-fix{
+    padding: .77% 0;
   }
-  .items-container{
-    position: absolute;
-    right: 150px;
-    ul{
-      display: flex;
-      vertical-align: bottom;
-      align-items: center;
-      li{
-        list-style: none;
-        padding:0 7px;
+  .search-input{
+
+      @include input-txt-style;
+      max-width: 60%;
+    }
+
+    .search-icon{
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 28px;
+    }
+    ::placeholder{
+      color:#fff;
+      opacity:.7;
+    }
+
+
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+
+    li{
+      padding:0 5px;
+      font-weight: 590;
+      a{
+        color:#fff;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
         font-size: small;
-        a{
-          display: flex;
-          text-decoration: none;
-          color:#fff;
-          font-weight:500;
-          mat-icon{
-            font-size: large;
-          }
-          .dropdown{
-            color: $primary-color;
-          }
+
+        mat-icon{
+          @include icon
+        }
+
+        .expand-icon{
+          color:$primary-color;
         }
       }
-      li :hover{
-        @include hover;
+
+    }
+    li a .lang{
+      padding-left:5px;
+      padding-right: 8px;
+    }
+    li :hover{
+      @include hover;
+    }
+
+
+    #logo{
+      color:#fff;
+      opacity:.7;
+    }
+  }
+}
+
+nav{
+  margin: 17px 12.8px;
+  padding: .2% 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    li{
+      padding: 0 5px;
+
+      a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color:$accent-color;
+        font-weight: bold;
+        font-size: 0.94rem;
+        .expand-icon{
+        @include icon;
+          color: $primary-color;
+        }
       }
-      .logo{
+    }
+    li :hover{
+      @include hover;
+    }
+
+    .book-now{
+      background: $primary-color;
+      border: 2px solid $primary-color;
+      padding: .8rem;
+      margin:0 10px;
+
+      a{
         color: #fff;
-        opacity:0.6;
-        font-size:15px;
-        padding-left:10px;
+        .expand-icon{
+          @include icon;
+
+        }
+      }
+
+
+    }
+
+    .book-now:hover{
+      background-color: #fff;
+      transition: .4s;
+      a{
+        color:$primary-color;
       }
     }
 

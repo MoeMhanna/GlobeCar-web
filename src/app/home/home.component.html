@@ -1,45 +1,111 @@
-<div class="bar-container">
-  <div class="search-bar-container">
-    <input class="search-input"
-           type="text"
+<div class="top-nav-bar">
+  <form>
+    <input type="text"
+           class="search-input"
            placeholder="Search...">
-    <span class="search-icon">
-      <a href="#"><mat-icon>search</mat-icon></a>
-    </span>
-  </div>
+    <button mat-button>
+      <mat-icon class="search-icon">search</mat-icon>
+    </button>
+  </form>
 
-  <div class="items-container">
+  <ul>
+    <li>
+      <a href="#">
+        <mat-icon>phone</mat-icon>
+        Call us
+        <mat-icon class="expand-icon">expand_more</mat-icon>
+      </a>
+
+    </li>
+    <li>
+      <a href="#">
+        Company
+        <mat-icon class="expand-icon">expand_more</mat-icon>
+      </a>
+
+    <li>
+      <a href="#">
+        <img src="assets/france.png"
+             alt="france_flag"
+             width="15 px"
+             height="12px"/>
+        <span class="lang">Français</span>
+      </a>
+    </li>
+    <li>
+      <img  width="80"
+            src="https://cdn.globecar.io/wp-content/themes/genesis-child/images/proudly_qc.png" >
+    </li>
+  </ul>
+</div>
+
+<nav>
+  <img width="207px"
+       height="55px"
+       src="https://cdn.globecar.io/wp-content/uploads/2018/02/globecar-logo@2x.png"/>
+
+  <div class="nav-items">
     <ul>
-      <li >
+      <li class="dropdown"
+          style="order:1">
         <a href="#">
-          <mat-icon>phone</mat-icon>
-          <span>
-            Call us
-          </span>
-          <mat-icon class="dropdown">expand_more</mat-icon>
+          <span>About</span>
+          <mat-icon class="expand-icon">expand_more</mat-icon>
+        </a>
+
+      </li>
+
+      <li class="dropdown"
+          style="order:2">
+        <a href="#">
+          <span>Vehicles</span>
+          <mat-icon class="expand-icon">expand_more</mat-icon>
         </a>
       </li>
-      <li class="dropdown">
+
+      <li class="dropdown"
+          style="order:3">
         <a href="#">
-          <span>
-            Company
-          </span>
-          <mat-icon class="dropdown">expand_more</mat-icon>
+          <span>Trucks</span>
+          <mat-icon class="expand-icon">expand_more</mat-icon>
         </a>
       </li>
-      <li>
+
+      <li class="dropdown"
+          style="order:6">
         <a href="#">
-          <img src="assets/france-flag.png"
-               width="15px"
-               height="15px" >
-          <span>
-            Français
-          </span>
+          <span>Help</span>
+          <mat-icon class="expand-icon">expand_more</mat-icon>
         </a>
       </li>
-      <span class="logo">
-        <i>Proudly</i>
-      </span>
+
+
+      <li style="order:4">
+        <a href="#">
+          <span>Locations</span>
+        </a>
+      </li>
+
+      <li style="order:5">
+        <a href="#">
+          <span>Coverage</span>
+        </a>
+      </li>
+
+      <li class="book-now"
+        style="order:7">
+        <a href="#">
+          <span >Book Now</span>
+        </a>
+      </li>
+
+      <li style="order:7">
+        <a href="#">
+          <span>More</span>
+          <mat-icon>menu</mat-icon>
+        </a>
+      </li>
+
     </ul>
   </div>
-</div>
+</nav>
