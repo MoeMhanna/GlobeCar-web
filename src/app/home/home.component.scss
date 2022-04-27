@@ -48,7 +48,9 @@
         mat-icon{
           @include icon
         }
-
+        .phone-icon{
+          transform: rotateY(180deg);
+        }
         .expand-icon{
           color:$primary-color;
         }
