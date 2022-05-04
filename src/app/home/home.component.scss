@@ -79,16 +79,16 @@
 }
 
 nav{
-  margin: 19px 12.8px;
   display: flex;
   align-items: center;
+  margin: 19px 12.8px;
   .wrap{
     @include wrap;
 
     ul{
+      list-style-type: none;
       display: flex;
       align-items: center;
-      list-style-type: none;
       li{
         padding: 0 5px;
 
