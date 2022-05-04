@@ -4,130 +4,138 @@
 .top-nav-bar{
   background-color: $accent-color;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: .2% 9%;
   margin: 0 12.8px;
+  height:41px;
+    .wrap{
+    @include wrap;
 
-  @include padding-fix{
-    padding: .77% 0;
-  }
-  .search-input{
+    @include padding-fix{
+      padding: .77% 0;
+    }
+    .search-input{
 
       @include input-txt-style;
       max-width: 60%;
     }
 
-    .search-icon{
-      color: $primary-color;
-      font-weight: bold;
-      font-size: 28px;
-    }
+      .search-icon{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 27px;
+      }
+
+
     ::placeholder{
       color:#fff;
       opacity:.7;
+      font-size: 11.8px;
     }
 
 
-  ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
+    ul{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
 
-    li{
-      padding:0 5px;
-      font-weight: 590;
-      a{
-        color:#fff;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        font-size: small;
+      li{
+        padding:0 3px;
+        font-weight: 590;
+        a{
+          color:#fff;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          font-size: 13px;
 
-        mat-icon{
-          @include icon
+          mat-icon{
+            @include icon
+          }
+          .phone-icon{
+            transform: rotateY(180deg);
+          }
+          .expand-icon{
+            color:$primary-color;
+          }
         }
-        .phone-icon{
-          transform: rotateY(180deg);
+
+        .logo{
+          margin-left: 4px;
+          margin-bottom: -3px;
         }
-        .expand-icon{
+
+      }
+      li a .lang{
+        padding-left:5px;
+        padding-right: 8px;
+      }
+      li :hover{
+        @include hover;
+      }
+    }
+  }
+
+}
+
+nav{
+  margin: 19px 12.8px;
+  display: flex;
+  align-items: center;
+  .wrap{
+    @include wrap;
+
+    ul{
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      li{
+        padding: 0 5px;
+
+        a{
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          color:$accent-color;
+          font-weight: bold;
+          font-size: 0.94rem;
+          .expand-icon{
+            @include icon;
+            color: $primary-color;
+          }
+        }
+      }
+      li :hover{
+        @include hover;
+      }
+
+      .book-now{
+        background: $primary-color;
+        border: 2px solid $primary-color;
+        padding: .8rem;
+        margin:0 10px;
+
+        a{
+          color: #fff;
+          .expand-icon{
+            @include icon;
+
+          }
+        }
+
+
+      }
+
+      .book-now:hover{
+        background-color: #fff;
+        transition: .4s;
+        a{
           color:$primary-color;
         }
       }
 
     }
-    li a .lang{
-      padding-left:5px;
-      padding-right: 8px;
-    }
-    li :hover{
-      @include hover;
-    }
-
-
-    #logo{
-      color:#fff;
-      opacity:.7;
-    }
   }
-}
 
-nav{
-  margin: 17px 12.8px;
-  padding: .2% 9%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  ul{
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    li{
-      padding: 0 5px;
-
-      a{
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        color:$accent-color;
-        font-weight: bold;
-        font-size: 0.94rem;
-        .expand-icon{
-        @include icon;
-          color: $primary-color;
-        }
-      }
-    }
-    li :hover{
-      @include hover;
-    }
-
-    .book-now{
-      background: $primary-color;
-      border: 2px solid $primary-color;
-      padding: .8rem;
-      margin:0 10px;
-
-      a{
-        color: #fff;
-        .expand-icon{
-          @include icon;
-
-        }
-      }
-
-
-    }
-
-    .book-now:hover{
-      background-color: #fff;
-      transition: .4s;
-      a{
-        color:$primary-color;
-      }
-    }
-
-  }
 }
