@@ -1,0 +1,35 @@
+@import "variables";
+
+@mixin input-txt-style{
+  background-color:$accent-color;
+  border:none;
+  outline: none;
+  color:#fff;
+}
+
+@mixin hover{
+  color: $primary-color;
+  transition: 0.3s;
+}
+
+@mixin icon{
+  font-size: 17.5px;
+  font-weight: bold;
+  margin-bottom:-7px;
+}
+
+@mixin padding-fix{
+  @media screen and (max-width: 1100px){
+    @content
+  }
+}
+
+@mixin wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px !important;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
