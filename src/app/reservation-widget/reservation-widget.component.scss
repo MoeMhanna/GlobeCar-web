@@ -1,0 +1,81 @@
+@import 'src/app/sass/abstracts/variables.scss';
+@import '../sass/abstracts/navbar_mixins';
+@import '../sass/abstracts/widget_mixins';
+
+.widget-rez{
+  max-width: 1080px !important;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+
+  .location-choice{
+    display:flex;
+    height:28px;
+    a{
+      display: flex;
+      align-items: center;
+      clip-path: polygon(0 0, 72% 0, 100% 100%, 0% 100%);
+      width:9.2%;
+      color:#fff;
+      font-size: 12px;
+      padding-left:7px;
+      font-weight: 500;
+      text-decoration: none;
+      opacity: 0.5;
+    }
+    .monterial{
+      background-color: $primary-color;
+    }
+    .toronto{
+      background-color: #93a309;
+      margin-left:-16px
+    }
+    .active-probence{
+      opacity: 1;
+      z-index:1;
+    }
+  }
+  .widget {
+    box-shadow:.2px .2px 10px rgba( 0, 0, 0, 0.5);
+    background-color: #f1f2ee;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 15px 0 14px;
+
+    .widget-contents.maximized-widget{
+      @include maximized-widget;
+    }
+
+    .widget-contents.minimized-widget{
+      @include minimized-widget;
+    }
+
+    }
+  }
+  .toggle-size-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .box-size{
+      clip-path: polygon(5% 0, 94% 0, 100% 100%, 0% 100%);
+      background-color: $accent-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width:25%;
+      height: 15px;
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#fff;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+
+

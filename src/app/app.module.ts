@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import {MaterialModule} from "./material/material.module";
+import {ReservationWidgetComponent} from "./reservation-widget/reservation-widget.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ReservationWidgetComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,250 @@
+<div class="widget-rez">
+  <div class="location-choice">
+    <a href="#" class="monterial" (click)="onClick()" [class.active-probence]="isActiveProbence()">
+      MONTERIAL
+    </a>
+    <a href="#" class="toronto" (click)="onClick()" [class.active-probence]="!isActiveProbence()" >
+      TORONTO
+    </a>
+  </div>
+  <div class="widget">
+    <!--
+     Minimize
+     -->
+    <div class="widget-contents"
+         [ngClass]="classState"
+         *ngIf="boxState == 'Minimize'">
+        <div class="tab-contents">
+          <div class="row">
+            <div class="select-container country-select">
+              <mat-label>
+                COUNTRY
+              </mat-label>
+              <div class="inner-addon">
+                <select>
+                  <option>Canada</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="select-container location">
+              <mat-label>PICKUP LOCATION</mat-label>
+              <div class="inner-addon">
+                <mat-icon>place</mat-icon>
+                <input type="text"
+                       placeholder="Select a location"
+                       class="location-txt-input">
+                <mat-icon class=" arrow-down">arrow_drop_down</mat-icon>
+              </div>
+            </div>
+
+            <div class="select-container select-time">
+              <mat-label>PICKUP TIME</mat-label>
+
+              <div class="pickup-time">
+                <div class="inner-addon">
+                  <mat-icon>date_range</mat-icon>
+                  <input type="text"
+                         [placeholder]="getDate(today)"/>
+                </div>
+                <div class="inner-addon ">
+                  <mat-icon>watch_later</mat-icon>
+                  <select>
+                    <option>
+                      09:00am
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="select-container age">
+              <mat-label>AGE</mat-label>
+              <div class="inner-addon">
+                <select>
+                  <option>select</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="select-container vehicle-select">
+              <mat-label>
+                VEHICLE TYPE
+              </mat-label>
+              <div class="inner-addon">
+                <select>
+                  <option>All</option>
+                  <option>Cars</option>
+                  <option>Trucks</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="select-container location">
+              <mat-label>RETURN LOCATION</mat-label>
+              <div class="inner-addon">
+                <mat-icon>place</mat-icon>
+                <input type="text"
+                       placeholder="Select a location"
+                       class="location-txt-input">
+                <mat-icon class=" arrow-down">arrow_drop_down</mat-icon>
+              </div>
+            </div>
+
+            <div class="select-container select-time">
+              <mat-label>RETURN TIME</mat-label>
+
+              <div class="return-time">
+                <div class="inner-addon">
+                  <mat-icon>date_range</mat-icon>
+                  <input type="text"
+                         [placeholder]="getDate(today)"/>
+                </div>
+                <div class="inner-addon">
+                  <mat-icon>watch_later</mat-icon>
+                  <select>
+                    <option>
+                      11:00am
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="select-container company">
+              <mat-label>PROMO / COMPANY</mat-label>
+              <div class="inner-addon">
+                <input type="text"
+                       placeholder="Code"/>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="submit">
+          <mat-icon>arrow_forward</mat-icon>
+      </div>
+
+    </div>
+
+    <!--
+     Maximize
+     -->
+    <div class="widget-contents"
+         [ngClass]="classState"
+         *ngIf="boxState == 'Corporate Rental / Promo Code'">
+      <div class="tab-contents">
+          <div class="select-container country-select">
+            <mat-label>
+              COUNTRY
+            </mat-label>
+            <div class="inner-addon">
+              <select>
+                <option>Canada</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="select-container location">
+            <mat-label>PICKUP & RETURN LOCATION</mat-label>
+            <div class="inner-addon">
+              <mat-icon>place</mat-icon>
+              <input type="text"
+                     placeholder="Select a location"
+                     class="location-txt-input">
+              <mat-icon class=" arrow-down">arrow_drop_down</mat-icon>
+            </div>
+          </div>
+
+          <div class="select-container select-time">
+            <mat-label>PICKUP TIME</mat-label>
+
+            <div class="pickup-time">
+              <div class="inner-addon">
+                <mat-icon>date_range</mat-icon>
+                <input type="text"
+                       [placeholder]="getDate(today)"/>
+              </div>
+              <div class="inner-addon ">
+                <mat-icon>watch_later</mat-icon>
+                <select>
+                  <option>
+                    09:00am
+                  </option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="select-container select-time"
+               id="return">
+            <mat-label>RETURN TIME</mat-label>
+
+            <div class="return-time">
+              <div class="inner-addon">
+                <mat-icon>date_range</mat-icon>
+                <input type="text"
+                       [placeholder]="getDate(today)"/>
+              </div>
+              <div class="inner-addon">
+                <mat-icon>watch_later</mat-icon>
+                <select>
+                  <option>
+                    11:00am
+                  </option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="select-container age">
+            <mat-label>AGE</mat-label>
+            <div class="inner-addon">
+              <select>
+                <option>select</option>
+              </select>
+            </div>
+          </div>
+
+
+      </div>
+      <div class="submit">
+       <mat-icon>arrow_forward</mat-icon>
+      </div>
+    </div>
+
+    <div class="toggle-size-btn">
+      <div class="box-size" (click)="changeBoxState()">
+        <a href="#" >
+          <mat-icon
+            *ngIf="boxState == 'Minimize'">
+            keyboard_arrow_up
+          </mat-icon>
+          <mat-icon
+            *ngIf="boxState == 'Corporate Rental / Promo Code'">
+            keyboard_arrow_down
+          </mat-icon>
+          {{this.boxState}}
+          <mat-icon
+            *ngIf="boxState == 'Minimize'">
+            keyboard_arrow_up
+          </mat-icon>
+          <mat-icon
+            *ngIf="boxState == 'Corporate Rental / Promo Code'">
+            keyboard_arrow_down
+          </mat-icon>
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
