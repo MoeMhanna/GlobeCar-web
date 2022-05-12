@@ -10,6 +10,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    this.automaticSlide();
+
+
   }
   images = [
     { imgSrc: "https://cdn.globecar.io/wp-content/uploads/2017/03/homeslide-01.jpg" },
@@ -33,12 +37,19 @@ export class HomeComponent implements OnInit {
       this.selectedIndex++;
     }
   }
-toPrevSlide() : void{
+  toPrevSlide() : void{
     if( this.selectedIndex == 0 ){
       this.selectedIndex = this.images.length - 1;
     }else{
       this.selectedIndex--;
     }
   }
+
+  automaticSlide(){
+    setInterval(()=> {
+      this.toNextSlide();
+    },4000)
+  }
+
 
 }
