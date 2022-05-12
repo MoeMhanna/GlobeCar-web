@@ -116,6 +116,37 @@
   </div>
 
 </nav>
-<div class="reservation-widget">
-  <app-reservation-widget> </app-reservation-widget>
+
+
+<div *ngIf="images && images.length > 0"
+     class="img-container">
+  <img *ngFor="let img of images; let i = index"
+       [src] = "img.imgSrc"
+       [ngClass]="{'image-active': selectedIndex === i}" >
+
+  <div *ngIf="indicators"
+    class="dot-container">
+    <span *ngFor="let dot of images ; let i = index"
+          class="dot"
+          [ngClass]="{'active-dot': selectedIndex === i}"
+          (click)="selectImage(i)">
+
+    </span>
+  </div>
+
+  <div class="prev-slide btn-carousal"
+       (click)="toPrevSlide()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </div>
+  <div class="next-slide btn-carousal"
+       (click)="toNextSlide()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </div>
+
+  <div class="reservation-widget">
+    <app-reservation-widget></app-reservation-widget>
+  </div>
 </div>
+
+
+

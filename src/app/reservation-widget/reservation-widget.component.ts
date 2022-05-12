@@ -8,8 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class ReservationWidgetComponent implements OnInit {
   private Active: boolean = true;
   today : Date = new Date();
-  boxState : string = 'Minimize';
-  classState : string = 'maximized-widget' +
+  boxState : string = 'Corporate Rental / Promo Code';
+  classState : string = 'minimized-widget' +
     '';
   constructor() { }
 
