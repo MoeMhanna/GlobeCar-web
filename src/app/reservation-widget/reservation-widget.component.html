@@ -1,16 +1,14 @@
 <div class="widget-rez">
   <div class="location-choice">
-    <a href="#" class="monterial" (click)="onClick()" [class.active-probence]="isActiveProbence()">
+    <a href="#" class="monterial" (click)="onClick()" [class.active-governorate]="isActiveGovernorate()">
       MONTERIAL
     </a>
-    <a href="#" class="toronto" (click)="onClick()" [class.active-probence]="!isActiveProbence()" >
+    <a href="#" class="toronto" (click)="onClick()" [class.active-governorate]="!isActiveGovernorate()" >
       TORONTO
     </a>
   </div>
   <div class="widget">
-    <!--
-     Minimize
-     -->
+
     <div class="widget-contents"
          [ngClass]="classState"
          *ngIf="boxState == 'Minimize'">
