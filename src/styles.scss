@@ -22,16 +22,16 @@ $warn: mat.define-palette(mat.$red-palette);
 // theming systems such as "color" or "typography".
 $theme: mat.define-light-theme((
   color: (
-    primary: $globcar-web-primary,
-    accent: $globcar-web-accent,
-    warn: $globcar-web-warn,
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($globcar-web-theme);
+@include mat.all-component-themes($theme);
 
 /* You can add global styles to this file, and also import other style files */
 
