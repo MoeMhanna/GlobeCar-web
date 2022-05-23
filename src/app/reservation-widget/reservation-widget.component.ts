@@ -7,39 +7,36 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ReservationWidgetComponent implements OnInit {
   private Active: boolean = true;
-  today : Date = new Date();
-  boxState : string = 'Minimize';
-  classState : string = 'maximized-widget' +
-    '';
-  constructor() { }
+  public today : Date = new Date();
+  public boxState : string = 'Minimize';
+  public classState : string = 'maximized-widget';
 
   ngOnInit(): void {
   }
 
-  getDate(today : Date) : String{
-
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1 ).padStart(2, '0');
-    const yyyy = today.getFullYear();
-
-    let day = dd + '/' + mm + '/' + yyyy;
-    return day;
+  public getDate(today : Date) : String{
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1 ).padStart(2, '0');
+    const year = today.getFullYear();
+    return day + '/' + month + '/' + year;
   }
 
-  getTime(today : Date) : String {
+  public getTime(today : Date) : String {
     const minutes = today.getUTCMinutes();
     const hours = today.getUTCHours();
     return hours + ':' + minutes;
-
   }
-  onClick() :void{
+
+  public onClick() :void{
     this.Active = !this.Active;
   }
-  isActiveProbence() :boolean{
+
+  public isActiveGovernorate() :boolean{
     return this.Active;
   }
 
-  changeBoxState() :void{
+  public changeBoxState() :void{
+
     if(this.boxState == 'Minimize'){
       this.boxState = 'Corporate Rental / Promo Code'
       this.classState = 'minimized-widget';
@@ -47,5 +44,7 @@ export class ReservationWidgetComponent implements OnInit {
       this.boxState = 'Minimize';
       this.classState = 'maximized-widget';
     }
+
   }
+
 }
